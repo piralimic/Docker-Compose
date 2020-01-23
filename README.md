@@ -1,10 +1,10 @@
 # Docker-Compose library
 
 ## D
-- [Django](/Django/)
+- [Django](/Django/) Python 3 framework
 
 ## M
-- [MongoDB](/MongoDB/)
+- [MongoDB](/MongoDB/) document-based database
 
 ## W
-- [WordPress](/WordPress/)
+- [WordPress](/WordPress/) PHP content management system
