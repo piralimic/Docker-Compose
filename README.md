@@ -1,7 +1,7 @@
 # Docker-Compose library
 
 ## D
-- [Django](/Django/) Python 3 framework
+- [Django](/Django/) Python3 framework
 
 ## M
 - [MongoDB](/MongoDB/) document-based database
