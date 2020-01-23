@@ -17,13 +17,14 @@ $ sudo chown -R $USER:$USER .
 ``` bash
 $ ls -l
 ```
->> -rw-r--r--  1 user  staff  145 Feb 13 23:00 Dockerfile
->> drwxr-xr-x  6 user  staff  204 Feb 13 23:07 composeexample
->> -rw-r--r--  1 user  staff  159 Feb 13 23:02 docker-compose.yml
->> -rwxr-xr-x  1 user  staff  257 Feb 13 23:07 manage.py
->> -rw-r--r--  1 user  staff   16 Feb 13 23:01 requirements.txt
+> -rw-r--r--  1 user  staff  145 Feb 13 23:00 Dockerfile<br>
+> drwxr-xr-x  6 user  staff  204 Feb 13 23:07 composeexample<br>
+> -rw-r--r--  1 user  staff  159 Feb 13 23:02 docker-compose.yml<br>
+> -rwxr-xr-x  1 user  staff  257 Feb 13 23:07 manage.py<br>
+> -rw-r--r--  1 user  staff   16 Feb 13 23:01 requirements.txt
 
-### 5. In your project directory, edit the `composeexample/settings.py` file.
+### 5. In your project directory
+Edit the *`composeexample/settings.py`* file:
 
 ``` python
 DATABASES = {
@@ -35,4 +36,16 @@ DATABASES = {
         'PORT': 5432,
     }
 }
+
+# Internationalization
+# https://docs.djangoproject.com/en/3.0/topics/i18n/
+
+LANGUAGE_CODE = 'fr'
+
+TIME_ZONE = 'Europe/Brussels'
+```
+
+### 5. Run server
+``` bash
+$ docker-compose up
 ```
