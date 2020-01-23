@@ -1,5 +1,5 @@
 # WordPress ready
-# Apache PHP server + MariaDB
+# Apache server + MariaDB + phpMyAdmin
 
 ## Source
 [BeCode.org](https://github.com/becodeorg/LIE-Jepsen-2.14/tree/master/02-the-hill/03-wordpress/parcours/docker-compose)
