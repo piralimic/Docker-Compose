@@ -1,11 +1,14 @@
 # Django + PostgreSQL
+
 <br>
 <br>
+
 ## Source
 Official Docker Sample on [docker docs](https://docs.docker.com/compose/django/)
 
 <br>
 <br>
+
 ### 1. Clone the repo and open a new terminal
 > docker-compose.yml<br>
 > Dockerfile<br>
@@ -13,6 +16,7 @@ Official Docker Sample on [docker docs](https://docs.docker.com/compose/django/)
 
 <br>
 <br>
+
 ### 2. Create the Django project by running the docker-compose run command
 ``` bash
 $ docker-compose run web django-admin startproject composeexample .
@@ -20,6 +24,7 @@ $ docker-compose run web django-admin startproject composeexample .
 
 <br>
 <br>
+
 ### 3. Change the ownership of the new files
 ``` bash
 $ sudo chown -R $USER:$USER .
@@ -27,6 +32,7 @@ $ sudo chown -R $USER:$USER .
 
 <br>
 <br>
+
 ### 4. List the files just to verify
 ``` bash
 $ ls -l
@@ -39,6 +45,7 @@ $ ls -l
 
 <br>
 <br>
+
 ### 5. In your project directory
 Edit the *`composeexample/settings.py`* file:
 
@@ -63,6 +70,7 @@ TIME_ZONE = 'Europe/Brussels'
 
 <br>
 <br>
+
 ### 5. Run server
 ``` bash
 $ docker-compose up
