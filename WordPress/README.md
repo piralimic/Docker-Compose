@@ -6,7 +6,8 @@
 <br>
 
 ### 1. Download and install WordPress
-install it into the `DocumentRoot` directory
+https://wordpress.org/download/
+copy all files into the `DocumentRoot` directory
 
 <br>
 
