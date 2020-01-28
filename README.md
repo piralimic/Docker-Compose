@@ -9,5 +9,8 @@
 ## M
 - [MongoDB](/MongoDB/) document-based database
 
+## R
+- [RAILS](/Rails/) Ruby on Rails framework
+
 ## W
 - [WordPress](/WordPress/) PHP content management system
