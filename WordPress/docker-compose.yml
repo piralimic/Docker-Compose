@@ -1,35 +1,48 @@
 version: '3'
+
 services:
-    php-apache:
-        build:
-          context: "."
-        ports:
-            - 8080:80
-        volumes:
-            - ./DocumentRoot:/var/www/html
-            - ./localhost.conf:/etc/apache2/sites-available/localhost.conf
-        links:
-            - 'mariadb'
-    mariadb:
-        image: mariadb:10.1
-        volumes:
-            - mariadb:/var/lib/mysql
-        environment:
-            TZ: "Europe/Brussels"
-            MYSQL_ALLOW_EMPTY_PASSWORD: "no"
-            MYSQL_ROOT_PASSWORD: "rootpwd"
-            MYSQL_USER: "wordpress"
-            MYSQL_PASSWORD: "password"
-            MYSQL_DATABASE: "wordpress"
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        links:
-            - mariadb
-        ports:
-            - 9000:80
-        environment:
-            MYSQL_USERNAME: "root"
-            MYSQL_ROOT_PASSWORD: "rootpwd"
-            PMA_HOST: mariadb
+  # Database
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    networks:
+      - wpsite
+  # phpmyadmin
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - wpsite
+  # Wordpress
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - '8000:80'
+    restart: always
+    volumes: ['./:/var/www/html']
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    networks:
+      - wpsite
+networks:
+  wpsite:
 volumes:
-    mariadb:
+  db_data:
