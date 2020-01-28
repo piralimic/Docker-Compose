@@ -2,6 +2,9 @@
 - Ruby 2.7
 - PostgreSQL
 
+## Source
+Official Docker Sample on [docker docs](https://docs.docker.com/compose/rails/)
+
 ## Pre-build
 ```bash
 $ docker-compose run web rails new . --force --no-deps --database=postgresql
